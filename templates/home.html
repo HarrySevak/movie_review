@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+ {% block content %} 
+{% for review in review_list %}
+<span class="row text-primary">
+
+<h3 class="col-8">{{review.title}}</h3>
+<h3 class="col-4">{% for star in review.stars %}
+   &#9733;
+   {% endfor %} 
+</h3> 
+</span>
+<p class="lead">{{review.review}}</p> 
+<p><strong>Starring:</strong> {{review.actors}}</p>
+<p><strong>Directed:</strong> {{review.director}} </p>
+<p class="pb-3"><strong>year:</strong>{{review.year}} </p>
+
+{% endfor %}
+
+{% endblock content %}
